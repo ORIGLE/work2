@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <input type="button" value="留言" id="btn1">
+    <ul>
+
+    </ul>
+</body>
+<script>
+    window.onload=function(){
+        var oT=document.body.children[0];
+        var oBtn=document.body.children[1];
+        var oUl=document.body.children[2];
+        oBtn.onclick=function(){
+            if(oT.value=='')return;
+            var oLi=document.createElement('li');
+            oLi.innerHTML=oT.value;
+            //前面的输入框内的内容
+            var oA=document.createElement('a');
+            oA.href='javascript:;';
+            oA.innerHTML='删除';
+            oLi.appendChild(oA);
+            if(oUl.children.length){
+                oUl.insertBefore(oLi,oUl.children[0]);
+            }else{
+                oUl.appendChild(oLi);
+            }
+            oA.onclick=function(){
+                oUl.removeChild(this.parentNode);
+            }
+            oT.value='';
+
+        };
+    }
+</script>
+</html>

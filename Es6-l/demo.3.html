@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //for循环有特别之处
+    //设置循环变量的那部分是父作用域
+    //循环体内部单独是一个子作用域
+    for(var i=0;i<5;i++){
+        var i='abc';
+        console.log(i);
+    }
+    for(let i=0;i<5;i++){
+        let i='abc';
+        console.log(i);
+    }
+</script>
+</html>

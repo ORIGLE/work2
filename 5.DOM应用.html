@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+</body>
+<script>
+    window.onload=function(){
+        var json=[
+        {"title":"高三家长暴打班主任","href":"http://slide.news.sina.com.cn/s/slide_1_86523_283831.html"},
+        {"title":"为救同学over","href":"http://slide.news.sina.com.cn/slide_1_2841_283893.html"},
+        {"title":"哥们忍不住了","href":"http://slide.news.sina.com.cn/slide_1_86523_283843.html"}
+
+        ]
+       var oUl=document.body.children[0];//第0个子节点
+       for(var i=0;i<json.length;i++){
+           var oA=document.createElement('a');
+           //createElement() 方法可创建元素节点
+           oA.innerHTML=json[i].title;
+           oA.href=json[i].href;
+           oA.target='_blank';
+           var oLi=document.createElement('li');
+           oLi.appendChild(oA);
+           oUl.appendChild(oLi);
+
+       }
+
+    }
+</script>
+</html>
